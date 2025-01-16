@@ -19,6 +19,8 @@ const onSearchSubmit = async (event) => {
     iziToast.error({
       title: 'Error',
       message: 'Please enter a search term.',
+      position: 'topRight',
+      backgroundColor: '#FF0000',
     });
     return;
   }
