@@ -12,6 +12,7 @@
 
 
 
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -26,6 +27,7 @@ header {
   background-color: #f8f8f8;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 
 #search-form {
   display: flex;
@@ -56,9 +58,11 @@ header {
   background-color: #0056b3;
 }
 
+
 main {
   padding: 20px;
 }
+
 
 .gallery {
   display: flex;
@@ -99,6 +103,7 @@ main {
   margin: 4px 0;
 }
 
+
 .loader {
   display: none;
   justify-content: center;
@@ -108,5 +113,18 @@ main {
 
 .loader.active {
   display: flex;
+}
+
+
+@media (max-width: 768px) {
+  .gallery-item {
+    flex: 1 1 calc(50% - 16px);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    flex: 1 1 100%;
+  }
 }
 

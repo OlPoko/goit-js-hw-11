@@ -25,12 +25,13 @@ const onSearchSubmit = async (event) => {
     return;
   }
 
-  showLoader();
+  showLoader(); 
   try {
     const data = await fetchImages(query);
-    hideLoader();
 
+    hideLoader();
     if (data.hits.length === 0) {
+      gallery.innerHTML = ''; 
       iziToast.info({
         title: 'No Results',
         message: 'Sorry, there are no images matching your search query. Please try again!',
@@ -43,7 +44,7 @@ const onSearchSubmit = async (event) => {
     const markup = createGalleryMarkup(data.hits);
     renderGallery(gallery, markup);
   } catch (error) {
-    hideLoader();
+    hideLoader(); 
     iziToast.error({
       title: 'Error',
       message: error.message,
@@ -52,6 +53,7 @@ const onSearchSubmit = async (event) => {
     });
   }
 };
+
 
 searchForm.addEventListener('submit', onSearchSubmit);
 
